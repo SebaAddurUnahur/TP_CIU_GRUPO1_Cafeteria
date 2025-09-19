@@ -1,4 +1,8 @@
-![alt text](image.png)                                                                      **Construcción de Interfaces de Usuario**
+<p align="center">
+  <img src="/LOGO_UNAHUR.png" alt="UNAHUR" width="400"/>
+</p>
+
+<h2 align="center">Construcción de Interfaces de Usuario</h2>
 
 ---
 
