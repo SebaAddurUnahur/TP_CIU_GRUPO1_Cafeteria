@@ -1,8 +1,8 @@
-<p align="center">
+<p align="left">
   <img src="/LOGO_UNAHUR.png" alt="UNAHUR" width="400"/>
 </p>
 
-<h2 align="center">Construcción de Interfaces de Usuario</h2>
+<h2 align="rigth">Construcción de Interfaces de Usuario</h2>
 
 ---
 
