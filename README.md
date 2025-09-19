@@ -2,7 +2,7 @@
   <img src="/LOGO_UNAHUR.png" alt="UNAHUR" width="400"/>
 </p>
 
-<h2 align="rigth">Construcción de Interfaces de Usuario</h2>
+<h2 align="center">Construcción de Interfaces de Usuario</h2>
 
 ---
 
@@ -71,3 +71,15 @@ La cafetería **Luna & Granos Café** quiere modernizar su presencia online. Nos
     ○ Instrucciones para correr en local
 - Deberán mandar el link al repo (recordar de hacerlo público) al siguiente mail: lucas.figarola@unahur.edu.ar
 - Incluyan en el mail los datos de los integrantes del grupo.
+
+
+---
+
+# PASOS A SEGUIR PARA UN CORRECTO USO Y FUNCIONAMIENTO
+
+- Abra la consola Bash en el directorio donde quiere depositar el proyecto
+- clone el repositorio con el comando: git clone https://github.com/SebaAddurUnahur/TP_CIU_GRUPO1_Cafeteria.git
+- Ingrese al IDE de su preferencia y abra el proyecto
+- Procurar tener instalado NodeJs y Npm (puede verificar las versiones con los siguientes comandos node -v y npm -v)
+- Abra la terminal del Ide e instale las dependencias necesarias con el comando npm install (o su abreviación npm i)
+- hecho esto luego ponga en la terminal el comando npm run dev
