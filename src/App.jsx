@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import bootstrap from 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css'
-import reactBootstrap from 'react-bootstrap'
-import './App.css'
+import {Navigate, Route, Routes } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from "./components/Navigationbar"
+import Carrito from "./pages/Carrito"
+import FormularioContacto from "./pages/FormularioContacto"
+import Inicio from "./pages/Inicio"
+import Carta from "./pages/Carta"
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/carta" element={<Carta />} />
+        <Route path="/carrito" element={<Carrito />} />
+        <Route path="/contacto" element={<FormularioContacto />} />
+      </Routes>
     </>
   )
 }
