@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState } from "react";
+import styles from "./NavigationBar.module.css";
+
 
 function NavigationBar() {
   const [expanded, setExpanded] = useState(false);
@@ -13,10 +15,12 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+          <Nav className = {styles["me-auto"]}>
             <Nav.Link as={NavLink} to="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
             <Nav.Link as={NavLink} to="/carta" onClick={() => setExpanded(false)}>Carta</Nav.Link>
             <Nav.Link as={NavLink} to="/carrito"onClick={() => setExpanded(false)}>Carrito</Nav.Link>
             <Nav.Link as={NavLink} to="/contacto"onClick={() => setExpanded(false)}>Formulatio Contacto</Nav.Link>
+          </Nav>
           </Nav>
         </Navbar.Collapse>
       </Container>

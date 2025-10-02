@@ -15,7 +15,7 @@ export default function Inicio() {
         </Col>
         
         <Col xs={12} md={6}>
-          <h1>Bienvenidos a Cafetería</h1>
+          <h1>Bienvenidos a Luna & Granos Café</h1>
           <p>
             Descubrí el mejor café de la ciudad. Granos seleccionados,
             ambiente acogedor y la mejor atención.
