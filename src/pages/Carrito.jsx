@@ -1,19 +1,32 @@
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Carrito({ carro, setCarro }) {
+  const cambioDePagina = useNavigate();
+
+
   const updateCantidad = (id, cantidad) => {
     setCarro((prevCarro) =>
       prevCarro.map((item) =>
         item.id === id ? { ...item, cantidad: cantidad } : item
       )
     );
-  };
+  }
 
   const total = carro.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
     0
   );
+
+  const eliminarProducto = (id) => {
+    setCarro((prevCarro) => prevCarro.filter((item) => item.id !== id));
+  };
+
+  const confirmarCompra = () => {
+    cambioDePagina("/FormularioPedido")  
+
+  }
 
   return (
     <div>
@@ -32,14 +45,21 @@ export default function Carrito({ carro, setCarro }) {
             <button onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
               +
             </button>
+            <button onClick={() => eliminarProducto(item.id)}>
+              X
+            </button>
+
           </div>
         ))
       )}
 
       <h2>Total: ${total}</h2>
+
+      <button onClick={() => confirmarCompra()}>
+        CONFIRMAR COMPRA
+      </button>
     </div>
   );
+
 }
-
-
 

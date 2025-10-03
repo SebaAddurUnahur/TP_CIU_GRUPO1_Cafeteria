@@ -19,7 +19,7 @@ function NavigationBar({ totalItems }) {
             <Nav className={styles["me-auto"]}>
               <Nav.Link as={NavLink} to="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
               <Nav.Link as={NavLink} to="/carta" onClick={() => setExpanded(false)}>Carta</Nav.Link>
-              <Nav.Link as={NavLink} to="/contacto" onClick={() => setExpanded(false)}>Formulatio Contacto</Nav.Link>
+              <Nav.Link as={NavLink} to="/contacto" onClick={() => setExpanded(false)}>Contactanos</Nav.Link>
               <Nav.Link as={NavLink} to="/carrito" className="position-relative" style={{ marginLeft: "20px", fontSize: "1.3rem" }} onClick={() => setExpanded(false)}> <img src="carrito-de-compras.png" alt="" style={{ width: "32px", height: "32px" }} /> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-light" style={{fontSize: "1.3rem", transform: "translate(-10%, -10%)"}}> {totalItems}</span></Nav.Link>
           </Nav>
         </Nav>
