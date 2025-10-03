@@ -1,32 +1,45 @@
-import { useState } from "react";   //Falta terminar esta  en construccion
-import producto from './Carta.jsx'
 
 
-export default function Carrito() {
-  const [setProducto] = useState([]); 
 
-const agregarACarrito = (producto) => {
-  setProducto(prev => {
-    const producoExistente = buscarEnCarrito(prev, producto.id);
-    return producoExistente
-      ? incrementarCantidad(prev, producto.id)
-      : [...prev, { ...producto, quantity: 1 }];
-  });
-};
+export default function Carrito({ carro, setCarro }) {
+  const updateCantidad = (id, cantidad) => {
+    setCarro((prevCarro) =>
+      prevCarro.map((item) =>
+        item.id === id ? { ...item, cantidad: cantidad } : item
+      )
+    );
+  };
 
-const buscarEnCarrito = (carrito, id) => {
-  return carrito.find(p => p.id === id);
-};
-
-const incrementarCantidad = (carrito, id) => {
-  return carrito.map(p =>
-    p.id === id ? { ...p, quantity: p.quantity + 1 } : p
+  const total = carro.reduce(
+    (acc, item) => acc + item.precio * item.cantidad,
+    0
   );
-};
 
   return (
-    <div>Carrito Luna & Granas Cafe</div>
-  )
+    <div>
+      <h1>Tu Carrito</h1>
+      {carro.length === 0 ? (
+        <p>El carrito está vacío</p>
+      ) : (
+        carro.map((item) => (
+          <div key={item.id}>
+            <p>
+              {item.nombre} - ${item.precio} x {item.cantidad}
+            </p>
+            <button onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1}>
+              -
+            </button>
+            <button onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
+              +
+            </button>
+          </div>
+        ))
+      )}
+
+      <h2>Total: ${total}</h2>
+    </div>
+  );
 }
+
 
 

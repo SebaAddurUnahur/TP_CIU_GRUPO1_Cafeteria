@@ -3,12 +3,13 @@ import Card from "react-bootstrap/Card";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
-export default function Carta() {
+
+export default function Carta({addToCarro}) {
   const productos = [
     {
       id: 1,
       nombre: "Cappuccino",
-      precio: "$2.800",
+      precio: 2800.00,
       imagen: "https://picsum.photos/300/200?random=1",
       descripcion: "Café espresso con leche espumada y un toque de canela",
       categoria: "Bebida"
@@ -16,7 +17,7 @@ export default function Carta() {
     {
       id: 2,
       nombre: "Americano",
-      precio: "$2.200",
+      precio: 2200.00,
       imagen: "https://picsum.photos/300/200?random=2",
       descripcion: "Café negro intenso, perfecto para comenzar el día",
       categoria: "Bebida"
@@ -24,7 +25,7 @@ export default function Carta() {
     {
       id: 3,
       nombre: "Espresso",
-      precio: "$1.800",
+      precio: 1800.00,
       imagen: "https://picsum.photos/300/200?random=3",
       descripcion:
         "Shot concentrado de café puro, la base de todos nuestros cafés",
@@ -33,7 +34,7 @@ export default function Carta() {
     {
       id: 4,
       nombre: "Latte",
-      precio: "$3.000",
+      precio: 3000.00,
       imagen: "https://picsum.photos/300/200?random=4",
       descripcion: "Café suave con leche cremosa y arte latte personalizado",
       categoria: "Bebida"
@@ -41,7 +42,7 @@ export default function Carta() {
     {
       id: 5,
       nombre: "Mocha",
-      precio: "$3.200",
+      precio: 3200.00,
       imagen: "https://picsum.photos/300/200?random=5",
       descripcion: "Deliciosa combinación de café, chocolate y crema batida",
       categoria: "Bebida"
@@ -49,7 +50,7 @@ export default function Carta() {
     {
       id: 6,
       nombre: "Medialuna",
-      precio: "$1.500",
+      precio: 1500.00,
       imagen: "https://picsum.photos/300/200?random=6",
       descripcion: "Medialuna francesa recién horneada, crujiente por fuera",
       categoria: "Comida"
@@ -57,7 +58,7 @@ export default function Carta() {
     {
       id: 7,
       nombre: "Cheesecake",
-      precio: "$2.500",
+      precio: 2500.00,
       imagen: "https://picsum.photos/300/200?random=7",
       descripcion: "Cremosa torta de queso con base de galletas y frutos rojos",
       categoria: "Comida"
@@ -65,7 +66,7 @@ export default function Carta() {
     {
       id: 8,
       nombre: "Brownie de chocolate",
-      precio: "$1.800",
+      precio: 1800.00,
       imagen: "https://picsum.photos/300/200?random=8",
       descripcion: "Brownie casero con chocolate intenso y nueces crocantes",
       categoria: "Comida"
@@ -101,12 +102,12 @@ export default function Carta() {
               <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
                 <Card.Subtitle className="mb-2 text-success">
-                  {producto.precio}
+                  ${producto.precio}
                 </Card.Subtitle>
                 <Card.Text>{producto.descripcion}</Card.Text>
                 {/*HAY QUE AGREGAR LA FUNCIONALIDAD DEL BOTON*/}
                 <div className="text-center">
-                  <Button variant="primary">Añadir al carrito</Button>
+                  <Button variant="primary" onClick={() => addToCarro(producto)}>Añadir al carrito</Button>
                 </div>
               </Card.Body>
             </Card>
