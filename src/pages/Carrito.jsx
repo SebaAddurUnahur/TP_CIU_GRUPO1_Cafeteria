@@ -24,7 +24,7 @@ export default function Carrito({ carro, setCarro }) {
   };
 
   const confirmarCompra = () => {
-    cambioDePagina("/FormularioPedido")  
+    cambioDePagina("/FormularioPedido")
 
   }
 
@@ -48,16 +48,16 @@ export default function Carrito({ carro, setCarro }) {
             <button onClick={() => eliminarProducto(item.id)}>
               X
             </button>
-
           </div>
         ))
       )}
+      {carro.length > 0 && (
+        <>
+          <h2>Total: ${total}</h2>
+          <button onClick={confirmarCompra}>CONFIRMAR COMPRA</button>
+        </>
+      )}
 
-      <h2>Total: ${total}</h2>
-
-      <button onClick={() => confirmarCompra()}>
-        CONFIRMAR COMPRA
-      </button>
     </div>
   );
 

@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar totalItems={totalItems}/>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/carta" element={<Carta addToCarro={addToCarro}/>} />

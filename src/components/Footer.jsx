@@ -18,12 +18,6 @@ export default function Footer() {
                 <Link to="/" className="text-dark text-decoration-none">Inicio</Link>
               </li>
               <li>
-                <Link to="/carta" className="text-dark text-decoration-none">Carta</Link>
-              </li>
-              <li>
-                <Link to="/carrito" className="text-dark text-decoration-none">Carrito</Link>
-              </li>
-              <li>
                 <Link to="/contacto" className="text-dark text-decoration-none">Contacto</Link>
               </li>
               <li>
