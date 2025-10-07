@@ -5,12 +5,14 @@ import { useSearchParams } from "react-router-dom";
 
 
 export default function Carta({addToCarro, handleShow}) {
+ 
   const productos = [
+   
     {
       id: 1,
       nombre: "Cappuccino",
       precio: 2800.00,
-      imagen: "https://picsum.photos/300/200?random=1",
+      imagen: "/cafe.png",
       descripcion: "Café espresso con leche espumada y un toque de canela",
       categoria: "Bebida"
     },
@@ -18,7 +20,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 2,
       nombre: "Americano",
       precio: 2200.00,
-      imagen: "https://picsum.photos/300/200?random=2",
+      imagen: "/cafe.png",
       descripcion: "Café negro intenso, perfecto para comenzar el día",
       categoria: "Bebida"
     },
@@ -26,7 +28,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 3,
       nombre: "Espresso",
       precio: 1800.00,
-      imagen: "https://picsum.photos/300/200?random=3",
+      imagen: "/cafe.png",
       descripcion:
         "Shot concentrado de café puro, la base de todos nuestros cafés",
       categoria: "Bebida"
@@ -35,7 +37,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 4,
       nombre: "Latte",
       precio: 3000.00,
-      imagen: "https://picsum.photos/300/200?random=4",
+      imagen: "/cafe.png",
       descripcion: "Café suave con leche cremosa y arte latte personalizado",
       categoria: "Bebida"
     },
@@ -43,7 +45,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 5,
       nombre: "Mocha",
       precio: 3200.00,
-      imagen: "https://picsum.photos/300/200?random=5",
+      imagen: "/cafe.png",
       descripcion: "Deliciosa combinación de café, chocolate y crema batida",
       categoria: "Bebida"
     },
@@ -51,7 +53,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 6,
       nombre: "Medialuna",
       precio: 1500.00,
-      imagen: "https://picsum.photos/300/200?random=6",
+      imagen: "/medialuna.jpg",
       descripcion: "Medialuna francesa recién horneada, crujiente por fuera",
       categoria: "Comida"
     },
@@ -59,7 +61,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 7,
       nombre: "Cheesecake",
       precio: 2500.00,
-      imagen: "https://picsum.photos/300/200?random=7",
+      imagen: "/cheesecake.jpg",
       descripcion: "Cremosa torta de queso con base de galletas y frutos rojos",
       categoria: "Comida"
     },
@@ -67,11 +69,12 @@ export default function Carta({addToCarro, handleShow}) {
       id: 8,
       nombre: "Brownie de chocolate",
       precio: 1800.00,
-      imagen: "https://picsum.photos/300/200?random=8",
+      imagen: "browni.jpg",
       descripcion: "Brownie casero con chocolate intenso y nueces crocantes",
       categoria: "Comida"
     },
   ];
+  
 
   const abrirCanvas = (producto) => {
     addToCarro(producto)
@@ -80,9 +83,9 @@ export default function Carta({addToCarro, handleShow}) {
   const [searchParams, setSearchParams] = useSearchParams()
   const filtro = searchParams.get("categoria") ?? "todos"
   const productosFiltrados = filtro === "todos" ? productos : productos.filter(producto => producto.categoria === filtro)
-
   return (
     <Container className="my-5">
+      
       <h1 className="text-center mb-4">Nuestra Carta</h1>
 
       <div className="text-center mb-4">
@@ -118,6 +121,8 @@ export default function Carta({addToCarro, handleShow}) {
           </Col>
         ))}
       </Row>
+      
     </Container>
+    
   );
 }

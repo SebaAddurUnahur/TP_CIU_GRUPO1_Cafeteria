@@ -8,7 +8,7 @@ export default function Inicio() {
       <Row className="align-items-center">
         <Col xs={12} md={6} className="mb-4 mb-md-0">
           <img 
-            src="https://picsum.photos/500/300" 
+            src="/LogoCafeteria.jpg" 
             alt="Imagen principal café" 
             className="img-fluid"
           />
@@ -34,8 +34,8 @@ export default function Inicio() {
               <h5>Café Premium</h5>
               <p>Granos seleccionados de las mejores fincas</p>
               <img 
-                src="https://picsum.photos/500/300" 
-                alt="Imagen café" 
+                src="../../public/cafe.png"
+                 alt="Imagen café" 
                 className="img-fluid mb-3"
               />
             </Col>
@@ -43,7 +43,7 @@ export default function Inicio() {
               <h5>Pastelería Fresca</h5>
               <p>Horneado diariamente por nuestros chefs</p>
               <img 
-                src="https://picsum.photos/500/300" 
+                src="../../public/cheesecake.jpg" 
                 alt="Imagen pastelería" 
                 className="img-fluid mb-3"
               />
