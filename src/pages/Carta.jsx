@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
 
-export default function Carta({addToCarro}) {
+export default function Carta({addToCarro, handleShow}) {
   const productos = [
     {
       id: 1,
@@ -73,6 +73,10 @@ export default function Carta({addToCarro}) {
     },
   ];
 
+  const abrirCanvas = (producto) => {
+    addToCarro(producto)
+    if (handleShow) handleShow()
+  } 
   const [searchParams, setSearchParams] = useSearchParams()
   const filtro = searchParams.get("categoria") ?? "todos"
   const productosFiltrados = filtro === "todos" ? productos : productos.filter(producto => producto.categoria === filtro)
@@ -107,7 +111,7 @@ export default function Carta({addToCarro}) {
                 <Card.Text>{producto.descripcion}</Card.Text>
                 {/*HAY QUE AGREGAR LA FUNCIONALIDAD DEL BOTON*/}
                 <div className="text-center">
-                  <Button variant="primary" onClick={() => addToCarro(producto)}>Añadir al carrito</Button>
+                  <Button variant="primary" onClick={() => abrirCanvas(producto)}>Añadir al carrito</Button>
                 </div>
               </Card.Body>
             </Card>

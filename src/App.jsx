@@ -2,6 +2,7 @@ import {Navigate, Route, Routes } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from "./components/Navigationbar"
 import Carrito from "./pages/Carrito"
+import CarritoOffcanvas from "./components/CarritoOffcanvas"
 import FormularioContacto from "./pages/FormularioContacto"
 import Inicio from "./pages/Inicio"
 import Carta from "./pages/Carta"
@@ -12,7 +13,8 @@ import { useState } from "react";
 
 function App() {
   
-  const [carro, setCarro] = useState([]);
+  const [carro, setCarro] = useState([])
+  const [showCarrito, setShowCarrito] = useState(false) // funciona para decirle al componente de bootstrap offCanvas si se muestra o no
 
   const addToCarro = (producto) => {
     setCarro((prevCarro) => {
@@ -34,10 +36,11 @@ function App() {
 
   return (
     <>
-      <NavigationBar totalItems={totalItems}/>
+      <NavigationBar totalItems={totalItems} onCarritoClick={() => setShowCarrito(true)} />
+      <CarritoOffcanvas show={showCarrito} handleClose={() => setShowCarrito(false)} carro={carro} setCarro={setCarro} />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/carta" element={<Carta addToCarro={addToCarro}/>} />
+        <Route path="/carta" element={<Carta addToCarro={addToCarro} handleShow={() => setShowCarrito(true) } />} />
         <Route path="/carrito" element={<Carrito carro={carro} setCarro={setCarro}/>} />
         <Route path="/contacto" element={<FormularioContacto />} />
         <Route path="/nosotros" element={<Nosotros />} />

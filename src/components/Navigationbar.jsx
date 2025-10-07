@@ -7,7 +7,7 @@ import styles from "./NavigationBar.module.css";
 
 
 
-function NavigationBar({ totalItems }) {
+function NavigationBar({ totalItems, onCarritoClick }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded} onToggle={() => setExpanded(!expanded)}>
@@ -20,11 +20,22 @@ function NavigationBar({ totalItems }) {
               <Nav.Link as={NavLink} to="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
               <Nav.Link as={NavLink} to="/carta" onClick={() => setExpanded(false)}>Carta</Nav.Link>
               <Nav.Link as={NavLink} to="/contacto" onClick={() => setExpanded(false)}>Contactanos</Nav.Link>
-              <Nav.Link as={NavLink} to="/carrito" className="position-relative" style={{ marginLeft: "20px", fontSize: "1.3rem" }} onClick={() => setExpanded(false)}> <img src="carrito-de-compras.png" alt="" style={{ width: "32px", height: "32px" }} /> <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-light" style={{fontSize: "1.3rem", transform: "translate(-10%, -10%)"}}> {totalItems}</span></Nav.Link>
+            </Nav>
           </Nav>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
+          <button
+            onClick={onCarritoClick}
+            className="btn position-relative"
+            style={{ border: "none", background: "transparent" }}
+          >
+            <img src="carrito-de-compras.png" alt="Carrito" style={{ width: "32px", height: "32px" }} />
+            {totalItems > 0 && (
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {totalItems}
+              </span>
+            )}
+          </button>
+        </Navbar.Collapse>
+      </Container>
     </Navbar >
   )
 }

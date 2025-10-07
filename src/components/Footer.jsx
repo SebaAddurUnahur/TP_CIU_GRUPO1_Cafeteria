@@ -18,7 +18,7 @@ export default function Footer() {
                 <Link to="/" className="text-dark text-decoration-none">Inicio</Link>
               </li>
               <li>
-                <Link to="/contacto" className="text-dark text-decoration-none">Contacto</Link>
+                <Link to="/contacto" className="text-dark text-decoration-none">Reservas</Link>
               </li>
               <li>
                 <Link to="/nosotros" className="text-dark text-decoration-none">Sobre nosotros</Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                       <Link to="/" className="text-dark text-decoration-none">Inicio</Link>
                     </li>
                     <li>
-                      <Link to="/contacto" className="text-dark text-decoration-none">Contacto</Link>
+                      <Link to="/contacto" className="text-dark text-decoration-none">Reservas</Link>
                     </li>
                     <li>
                       <Link to="/nosotros" className="text-dark text-decoration-none">Sobre nosotros</Link>
