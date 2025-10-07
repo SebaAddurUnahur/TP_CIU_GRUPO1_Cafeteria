@@ -28,8 +28,8 @@ export default function Footer() {
           <Col md={4} className="mb-3">
             <h6 className="fw-bold">Contacto</h6>
             <p className="small mb-1">📍 Calle numero, Localidad</p>
-            <p className="small mb-1">📞 numero</p>
-            <p className="small mb-2">✉️ email</p>
+            <p className="small mb-1"><a href="tel:1141423239" className="text-dark text-decoration-none">📞1141423239</a></p>
+            <p className="small mb-2"><a href="mailto:cafelunaygranos@gmail.com" className="text-dark text-decoration-none">✉️ cafelunaygranos@gmail.com</a></p>
           </Col>
         </Row>
 
@@ -58,8 +58,9 @@ export default function Footer() {
                 <Accordion.Header>Contacto</Accordion.Header>
                 <Accordion.Body>
                   <p className="small mb-1">📍 Calle numero, Localidad</p>
-                  <p className="small mb-1">📞 numero telefono</p>
-                  <p className="small mb-2">✉️ email</p>
+                  <p className="small mb-1"><a href="tel:1141423239" className="text-dark text-decoration-none">📞1141423239</a></p>
+                  <p className="small mb-2"><a href="mailto:cafelunaygranos@gmail.com" className="text-dark text-decoration-none">✉️ cafelunaygranos@gmail.com</a></p>
+                  
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

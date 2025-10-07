@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
-
+import { Modal, Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export default function Carrito({ carro, setCarro }) {
-  const cambioDePagina = useNavigate();
 
+  const [mostrarModal, setMostrarModal] = useState(false) // estado para mostrar/ocultar modal
+  const cambioDePagina = useNavigate()
 
   const updateCantidad = (id, cantidad) => {
     setCarro((prevCarro) =>
@@ -24,12 +26,17 @@ export default function Carrito({ carro, setCarro }) {
   };
 
   const confirmarCompra = () => {
-    cambioDePagina("/FormularioPedido")
+    setMostrarModal(true)
+  }
 
+  const cerrarModal = () => {
+    setMostrarModal(false)
+    setCarro([]) // vacia el carrito despues de confirmar
+    cambioDePagina('/')
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Tu Carrito</h1>
       {carro.length === 0 ? (
         <p>El carrito está vacío</p>
@@ -51,10 +58,25 @@ export default function Carrito({ carro, setCarro }) {
           </div>
         ))
       )}
-      {carro.length > 0 && (
+      {carro.length > 0 && (  //si el carrito tiene productos, muestra total y boton
         <>
           <h2>Total: ${total}</h2>
-          <button onClick={confirmarCompra}>CONFIRMAR COMPRA</button>
+          <Button variant="success" onClick={confirmarCompra}>Confirmar pedido</Button>
+          <Modal show={mostrarModal} onHide={cerrarModal} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>
+                ✅ Pedido confirmado
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>Gracias por tu compra. Te contactaremos pronto para coordinar la entrega.</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={cerrarModal}>
+                Ir al inicio
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </>
       )}
 
