@@ -21,6 +21,12 @@ function App() {
 
   const [showCarrito, setShowCarrito] = useState(false); // funciona para decirle al componente de bootstrap offCanvas si se muestra o no
 
+  const [theme, setTheme] = useState("light"); // 👈 nuevo
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   const addToCarro = (producto) => {
     setCarro((prevCarro) => {
       const existeProducto = prevCarro.find((item) => item.id === producto.id);
@@ -40,9 +46,13 @@ function App() {
   const totalItems = carro.reduce((acc, item) => acc + item.cantidad, 0);
 
   return (
-    <>
+    <div data-bs-theme={theme}
+      className={theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}
+      style={{ minHeight: "100vh", transition: "all 0.3s" }}>
       <NavigationBar
         totalItems={totalItems}
+        toggleTheme={toggleTheme}
+        theme={theme}
         onCarritoClick={() => setShowCarrito(true)}
       />
       <CarritoOffcanvas
@@ -50,6 +60,7 @@ function App() {
         handleClose={() => setShowCarrito(false)}
         carro={carro}
         setCarro={setCarro}
+        theme={theme}
       />
       <Routes>
         <Route path="/" element={<Inicio />} />
@@ -69,8 +80,8 @@ function App() {
         <Route path="/contacto" element={<FormularioContacto />} />
         <Route path="/nosotros" element={<Nosotros />} />
       </Routes>
-      <Footer />
-    </>
+      <Footer theme={theme}/>
+    </div>
   );
 }
 
