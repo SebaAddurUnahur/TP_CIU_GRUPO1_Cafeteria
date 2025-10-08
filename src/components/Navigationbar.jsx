@@ -7,13 +7,12 @@ import styles from "./NavigationBar.module.css";
 
 
 
-function NavigationBar({ totalItems, setShowCarrito, toggleTheme, theme }) {
+function NavigationBar({ totalItems, setShowCarrito }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
 
-    <Navbar expand="lg" bg={theme === "dark" ? "dark" : "light"}
-      variant={theme === "dark" ? "dark" : "light"} className="mb-3">
+    <Navbar expand="lg" className="bg-body-tertiary" expanded={expanded} onToggle={() => setExpanded(!expanded)}>
       <Container>
         <Navbar.Brand as={Link} to="/">Cafeteria</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,12 +24,6 @@ function NavigationBar({ totalItems, setShowCarrito, toggleTheme, theme }) {
               <Nav.Link as={NavLink} to="/reserva" onClick={() => setExpanded(false)}>Hacé tu reserva</Nav.Link>
             </Nav>
           </Nav>
-          <button
-            onClick={toggleTheme}
-            className={`btn btn-${theme === "light" ? "dark" : "light"} me-3`}
-          >
-            {theme === "light" ? "🌙" : "☀️"}
-          </button>
           <button
             onClick={setShowCarrito}
             className="btn position-relative"
