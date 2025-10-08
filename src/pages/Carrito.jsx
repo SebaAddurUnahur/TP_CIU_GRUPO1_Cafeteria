@@ -1,12 +1,16 @@
 import { Modal, Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 export default function Carrito({ carro, setCarro }) {
 
   const [mostrarModal, setMostrarModal] = useState(false) // estado para mostrar/ocultar modal
   const cambioDePagina = useNavigate()
+
+  useEffect(() => {
+    document.title = "Luna & Granos | Carrito";
+  }, [])
 
   const updateCantidad = (id, cantidad) => {
     setCarro((prevCarro) =>

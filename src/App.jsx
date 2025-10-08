@@ -1,9 +1,8 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navigationbar";
 import Carrito from "./pages/Carrito";
 import CarritoOffcanvas from "./components/CarritoOffcanvas";
-import FormularioContacto from "./pages/FormularioReserva";
 import Inicio from "./pages/Inicio";
 import Carta from "./pages/Carta";
 import Footer from "./components/Footer";
@@ -13,12 +12,13 @@ import FormularioReserva from "./pages/FormularioReserva";
 
 function App() {
   const [carro, setCarro] = useState(() => {
-    const carroGuardado = localStorage.getItem("carrito");
-    return carroGuardado ? JSON.parse(carroGuardado) : [];
-  });
+    const carroGuardado = localStorage.getItem("carrito") // busca en localstorage si esta el carrito
+    return carroGuardado ? JSON.parse(carroGuardado) : [] // si esta lo parsea a un array del carrito, sino devuelve un array vacio
+  })
+
   useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(carro));
-  }, [carro]);
+    localStorage.setItem("carrito", JSON.stringify(carro)); // cada vez que cambia el carrito, lo guarda en localstorage
+  }, [carro])
 
   const [showCarrito, setShowCarrito] = useState(false); // funciona para decirle al componente de bootstrap offCanvas si se muestra o no
 
@@ -29,17 +29,17 @@ function App() {
   };
 
   const addToCarro = (producto) => {
-    setCarro((prevCarro) => {
+    setCarro((prevCarro) => { // actualiza el estado del carrito previo
       const existeProducto = prevCarro.find((item) => item.id === producto.id);
 
       if (existeProducto) {
         return prevCarro.map((item) =>
-          item.id === producto.id
+          item.id === producto.id // si el id del producto ya existe en el carrito aumento la cantidad en 1 sino dejo el item igual
             ? { ...item, cantidad: item.cantidad + 1 }
             : item
         );
       } else {
-        return [...prevCarro, { ...producto, cantidad: 1 }];
+        return [...prevCarro, { ...producto, cantidad: 1 }]; // si no existe el producto en el carrito, se agrega el producto con el atribuo cantidad en 1
       }
     });
   };
@@ -54,11 +54,11 @@ function App() {
         totalItems={totalItems}
         toggleTheme={toggleTheme}
         theme={theme}
-        onCarritoClick={() => setShowCarrito(true)}
+        setShowCarrito={() => setShowCarrito(true)}
       />
       <CarritoOffcanvas
         show={showCarrito}
-        handleClose={() => setShowCarrito(false)}
+        setShowCarrito={() => setShowCarrito(false)}
         carro={carro}
         setCarro={setCarro}
         theme={theme}
@@ -70,7 +70,7 @@ function App() {
           element={
             <Carta
               addToCarro={addToCarro}
-              handleShow={() => setShowCarrito(true)}
+              setShowCarrito={() => setShowCarrito(true)}
             />
           }
         />

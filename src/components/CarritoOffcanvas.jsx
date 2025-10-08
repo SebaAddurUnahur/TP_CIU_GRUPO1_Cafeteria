@@ -1,7 +1,7 @@
 import { Offcanvas, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-export default function CarritoOffcanvas({ show, handleClose, carro, setCarro }) {
+export default function CarritoOffcanvas({ show, setShowCarrito, carro, setCarro }) {
     const navigate = useNavigate();
 
     const eliminarProducto = (id) => {
@@ -11,12 +11,12 @@ export default function CarritoOffcanvas({ show, handleClose, carro, setCarro })
     const total = carro.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
 
     const irAlCarrito = () => {
-        handleClose();
+        setShowCarrito();
         navigate("/carrito");
     };
 
     return (
-        <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas show={show} onHide={setShowCarrito} placement="end">
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title>Tu carrito</Offcanvas.Title>
             </Offcanvas.Header>
@@ -40,7 +40,7 @@ export default function CarritoOffcanvas({ show, handleClose, carro, setCarro })
                         </div>
                     ))
                 )}
-                {carro.length > 0 && (
+                {carro.length > 0 && ( //si el carrito tiene productos, muestra el total y el boton
                     <>
                         <h5>Total: ${total}</h5>
                         <Button variant="primary" onClick={irAlCarrito} className="mt-3 w-100">

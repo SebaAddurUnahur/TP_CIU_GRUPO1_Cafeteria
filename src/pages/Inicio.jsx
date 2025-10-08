@@ -1,8 +1,13 @@
-import React from 'react'
+import { useEffect } from "react"
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function Inicio() {
+
+  useEffect(() => {
+      document.title = "Luna & Granos";
+    }, [])
+
   return (
     <Container className="my-5">
       <Row className="align-items-center">

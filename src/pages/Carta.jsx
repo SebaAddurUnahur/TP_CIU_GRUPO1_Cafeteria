@@ -1,10 +1,15 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom"
+import { useEffect } from "react"
 
 
-export default function Carta({ addToCarro, handleShow }) {
+export default function Carta({ addToCarro, setShowCarrito }) {
+  
+  useEffect(() => {
+    document.title = "Luna & Granos | Carta";
+  }, [])
 
   const productos = [
 
@@ -78,10 +83,10 @@ export default function Carta({ addToCarro, handleShow }) {
 
   const abrirCanvas = (producto) => {
     addToCarro(producto)
-    if (handleShow) handleShow()
+    setShowCarrito()
   }
   const [searchParams, setSearchParams] = useSearchParams()
-  const filtro = searchParams.get("categoria") ?? "todos"
+  const filtro = searchParams.get("categoria") ?? "todos" // si no hay ningun parametro en la url, por defecto es "todos"
   const productosFiltrados = filtro === "todos" ? productos : productos.filter(producto => producto.categoria === filtro)
   return (
     <Container className="my-5">

@@ -10,6 +10,7 @@ function FormularioReserva() {
     telefono: "",
     fecha: "",
     hora: "",
+    mensaje: ""
   });
 
   const [mostrarPopUp, setMostrarPopUp] = useState(false); //controla si el modal se muestra o no
@@ -20,7 +21,11 @@ function FormularioReserva() {
   const [enviado, setEnviado] = useState(false);
   const [formularioCompleto, setFormularioCompleto] = useState(false); // controla si el formulario está completo para habilitar el botón de reserva
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = "Luna & Granos | Reserva"
+  }, [])
 
   useEffect(() => {
     const { nombre, apellido, email, telefono, fecha, hora } = formulario;
@@ -31,18 +36,18 @@ function FormularioReserva() {
     }
   }, [formulario]); // se ejecuta cada vez que cambia el estado del formulario y cambia el estado de formularioCompleto
 
-  const manejarCambio = (e) => {
+  const manejarCambio = (e) => { // actualiza el estado del formulario
     const { name, value } = e.target;
     setFormulario({
       ...formulario,
-      [name]: value,
+      [name]: value
     });
   };
 
   const manejarSubmit = (evento) => {
     const fechaActual = new Date();
     evento.preventDefault(); // previene el comportamiento por defecto del form que recarga la página
-    if (!isNaN(formulario.nombre)) {
+    if (!isNaN(formulario.nombre)) { // isNaN devuelve true si no es un numero
       setError("El nombre no debe contener números.");
       setEnviado(false);
       manejarMostrar();
@@ -78,7 +83,7 @@ function FormularioReserva() {
       manejarMostrar();
       return;
     }
-
+    // Si pasan todas las validaciones, setea el error en vacio y muestra el modal de éxito
     setError("");
     setEnviado(true);
     manejarMostrar();
@@ -122,7 +127,7 @@ function FormularioReserva() {
               type="text"
               name="email"
               value={formulario.email}
-              placeholder="Email"
+              placeholder="algo@email."
               onChange={manejarCambio}
             />
           </Form.Group>
@@ -157,6 +162,17 @@ function FormularioReserva() {
               onChange={manejarCambio}
             />
           </Form.Group>
+          <Form.Group as={Col} xs={12}>
+            <Form.Label>Mensaje o detalle que necesitemos saber (opcional)</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              name="mensaje"
+              value={formulario.mensaje}
+              placeholder="Escribí aquí tu mensaje..."
+              onChange={manejarCambio}
+            />
+          </Form.Group>
         </Row>
         <Button
           type="submit"
@@ -188,6 +204,10 @@ function FormularioReserva() {
                 <p>Teléfono: {formulario.telefono}</p>
                 <p>Fecha: {formulario.fecha}</p>
                 <p>Hora: {formulario.hora}</p>
+                {formulario.mensaje && <p>Mensaje: {formulario.mensaje}</p>}
+                <p className="mt-3">
+                  ¡Gracias por elegirnos! Te esperamos en Luna & Granos ☕
+                </p>
               </div>
             )}
           </Modal.Body>
@@ -196,7 +216,7 @@ function FormularioReserva() {
               variant="secondary"
               onClick={() => {
                 manejarCerrar();
-                if (!error) {
+                if (!error) { // si no hay error, activa la navegacion en el boton Ir al inicio
                   navigate("/");
                 }
               }}

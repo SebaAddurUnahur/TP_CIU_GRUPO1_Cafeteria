@@ -1,8 +1,12 @@
-import React from 'react'
+import { useEffect } from "react"
 
 export default function Nosotros() {
+  useEffect(() => {
+    document.title = "Luna & Granos | Nosotros";
+  }, [])
+
   return (
-    <div>
+    <div className="container">
       <h1>Nosotros</h1>
       <p>
         En luna y granos Café creemos que cada taza de café es una oportunidad para conectar, disfrutar y compartir momentos únicos. Nacimos con la idea de crear un espacio donde el aroma del café recién molido se combine con un ambiente acogedor, ideal para relajarse, trabajar o simplemente disfrutar de una buena conversación.

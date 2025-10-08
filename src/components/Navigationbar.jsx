@@ -7,7 +7,7 @@ import styles from "./NavigationBar.module.css";
 
 
 
-function NavigationBar({ totalItems, onCarritoClick, toggleTheme, theme }) {
+function NavigationBar({ totalItems, setShowCarrito, toggleTheme, theme }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -32,7 +32,7 @@ function NavigationBar({ totalItems, onCarritoClick, toggleTheme, theme }) {
             {theme === "light" ? "🌙" : "☀️"}
           </button>
           <button
-            onClick={onCarritoClick}
+            onClick={setShowCarrito}
             className="btn position-relative"
             style={{ border: "none", background: "transparent" }}
           >
