@@ -1,7 +1,7 @@
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({theme}) {
   return (
     <footer className="bg-light text mt-5 pt-4">
       <Container>
