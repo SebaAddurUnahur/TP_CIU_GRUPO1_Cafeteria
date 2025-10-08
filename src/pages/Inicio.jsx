@@ -57,7 +57,7 @@ export default function Inicio() {
               <h5>Ambiente Acogedor</h5>
               <p>El lugar perfecto para relajarte</p>
               <img 
-                src="https://picsum.photos/500/300" 
+                src="/CafeteriaLuna&GranosCafe.png"
                 alt="Imagen establecimiento" 
                 className="img-fluid mb-3"
               />
