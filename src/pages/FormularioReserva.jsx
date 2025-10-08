@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-function FormularioContacto() {
+function FormularioReserva() {
   const [formulario, setFormulario] = useState({
     nombre: "",
     apellido: "",
@@ -209,4 +209,4 @@ function FormularioContacto() {
     </>
   );
 }
-export default FormularioContacto;
+export default FormularioReserva;

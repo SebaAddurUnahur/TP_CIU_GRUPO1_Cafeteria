@@ -34,7 +34,7 @@ export default function Inicio() {
               <h5>Café Premium</h5>
               <p>Granos seleccionados de las mejores fincas</p>
               <img 
-                src="../../public/cafe.png"
+                src="/cafe.png"
                  alt="Imagen café" 
                 className="img-fluid mb-3"
               />
@@ -43,7 +43,7 @@ export default function Inicio() {
               <h5>Pastelería Fresca</h5>
               <p>Horneado diariamente por nuestros chefs</p>
               <img 
-                src="../../public/cheesecake.jpg" 
+                src="/cheesecake.jpg" 
                 alt="Imagen pastelería" 
                 className="img-fluid mb-3"
               />

@@ -3,12 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navigationbar";
 import Carrito from "./pages/Carrito";
 import CarritoOffcanvas from "./components/CarritoOffcanvas";
-import FormularioContacto from "./pages/FormularioContacto";
+import FormularioContacto from "./pages/FormularioReserva";
 import Inicio from "./pages/Inicio";
 import Carta from "./pages/Carta";
 import Footer from "./components/Footer";
 import Nosotros from "./pages/Nosotros";
 import { useState, useEffect } from "react";
+import FormularioReserva from "./pages/FormularioReserva";
 
 function App() {
   const [carro, setCarro] = useState(() => {
@@ -66,7 +67,7 @@ function App() {
           path="/carrito"
           element={<Carrito carro={carro} setCarro={setCarro} />}
         />
-        <Route path="/contacto" element={<FormularioContacto />} />
+        <Route path="/reserva" element={<FormularioReserva />} />
         <Route path="/nosotros" element={<Nosotros />} />
       </Routes>
       <Footer />

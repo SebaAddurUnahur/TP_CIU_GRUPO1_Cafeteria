@@ -19,7 +19,7 @@ function NavigationBar({ totalItems, onCarritoClick }) {
             <Nav className={styles["me-auto"]}>
               <Nav.Link as={NavLink} to="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
               <Nav.Link as={NavLink} to="/carta" onClick={() => setExpanded(false)}>Carta</Nav.Link>
-              <Nav.Link as={NavLink} to="/contacto" onClick={() => setExpanded(false)}>Contactanos</Nav.Link>
+              <Nav.Link as={NavLink} to="/reserva" onClick={() => setExpanded(false)}>Hacé tu reserva</Nav.Link>
             </Nav>
           </Nav>
           <button
