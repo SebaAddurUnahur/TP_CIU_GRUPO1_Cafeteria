@@ -4,10 +4,10 @@ import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
 
 
-export default function Carta({addToCarro, handleShow}) {
- 
+export default function Carta({ addToCarro, handleShow }) {
+
   const productos = [
-   
+
     {
       id: 1,
       nombre: "Cappuccino",
@@ -20,15 +20,15 @@ export default function Carta({addToCarro, handleShow}) {
       id: 2,
       nombre: "Americano",
       precio: 2200.00,
-      imagen: "/cafe.png",
+      imagen: "/Americano.png",
       descripcion: "Café negro intenso, perfecto para comenzar el día",
       categoria: "Bebida"
     },
     {
       id: 3,
-      nombre: "Espresso",
+      nombre: "Ristretto",
       precio: 1800.00,
-      imagen: "/cafe.png",
+      imagen: "/Ristretto.png",
       descripcion:
         "Shot concentrado de café puro, la base de todos nuestros cafés",
       categoria: "Bebida"
@@ -37,7 +37,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 4,
       nombre: "Latte",
       precio: 3000.00,
-      imagen: "/cafe.png",
+      imagen: "/Latte.png",
       descripcion: "Café suave con leche cremosa y arte latte personalizado",
       categoria: "Bebida"
     },
@@ -45,7 +45,7 @@ export default function Carta({addToCarro, handleShow}) {
       id: 5,
       nombre: "Mocha",
       precio: 3200.00,
-      imagen: "/cafe.png",
+      imagen: "/Mocha.png",
       descripcion: "Deliciosa combinación de café, chocolate y crema batida",
       categoria: "Bebida"
     },
@@ -74,18 +74,18 @@ export default function Carta({addToCarro, handleShow}) {
       categoria: "Comida"
     },
   ];
-  
+
 
   const abrirCanvas = (producto) => {
     addToCarro(producto)
     if (handleShow) handleShow()
-  } 
+  }
   const [searchParams, setSearchParams] = useSearchParams()
   const filtro = searchParams.get("categoria") ?? "todos"
   const productosFiltrados = filtro === "todos" ? productos : productos.filter(producto => producto.categoria === filtro)
   return (
     <Container className="my-5">
-      
+
       <h1 className="text-center mb-4">Nuestra Carta</h1>
 
       <div className="text-center mb-4">
@@ -105,14 +105,13 @@ export default function Carta({addToCarro, handleShow}) {
         {productosFiltrados.map((producto) => (
           <Col md={4} lg={3} key={producto.id} className="mb-4">
             <Card>
-              <Card.Img variant="top" src={producto.imagen} />
+              <Card.Img variant="top" src={producto.imagen} className="product-img" />
               <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
                 <Card.Subtitle className="mb-2 text-success">
                   ${producto.precio}
                 </Card.Subtitle>
                 <Card.Text>{producto.descripcion}</Card.Text>
-                {/*HAY QUE AGREGAR LA FUNCIONALIDAD DEL BOTON*/}
                 <div className="text-center">
                   <Button variant="primary" onClick={() => abrirCanvas(producto)}>Añadir al carrito</Button>
                 </div>
@@ -121,8 +120,8 @@ export default function Carta({addToCarro, handleShow}) {
           </Col>
         ))}
       </Row>
-      
+
     </Container>
-    
+
   );
 }
