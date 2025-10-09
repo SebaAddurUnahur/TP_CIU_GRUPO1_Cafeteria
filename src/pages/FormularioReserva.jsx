@@ -109,7 +109,7 @@ function FormularioReserva() {
         <Row className="mb-3">
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Nombre</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="text"
               name="nombre"
@@ -120,7 +120,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Apellido</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="text"
               name="apellido"
@@ -131,7 +131,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Email</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="text"
               name="email"
@@ -142,7 +142,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Teléfono</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="tel"
               name="telefono"
@@ -153,7 +153,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Fecha de reserva</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="date"
               name="fecha"
@@ -163,7 +163,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
             <Form.Label className="form-label text-dark fw-bold">Hora de reserva</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               required
               type="time"
               name="hora"
@@ -173,7 +173,7 @@ function FormularioReserva() {
           </Form.Group>
           <Form.Group as={Col} xs={12}>
             <Form.Label className="form-label text-dark fw-bold">Mensaje o detalle que necesitemos saber (opcional)</Form.Label>
-            <Form.Control
+            <Form.Control className="formImput"
               as="textarea"
               rows={3}
               name="mensaje"
@@ -183,12 +183,11 @@ function FormularioReserva() {
             />
           </Form.Group>
         </Row>
-        <Button
-          variant="primary"
+        <Button          
           type="submit"
           onClick={manejarMostrar}
           disabled={!formularioCompleto}
-          className="mb-5"
+          className="mb-5 btn-primary"
         >
           Reservar
         </Button>
@@ -223,7 +222,7 @@ function FormularioReserva() {
             )}
           </Modal.Body>
           <Modal.Footer>         
-              <Button
+              <Button 
               onClick={() => {
                 manejarCerrar();
                 if (!error) { // si no hay error, activa la navegacion en el boton Ir al inicio

@@ -50,13 +50,13 @@ export default function Carrito({ carro, setCarro }) {
             <p>
               {item.nombre} - ${item.precio} x {item.cantidad}
             </p>
-            <Button variant="secondary" onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1} className='me-2 mb-2'>
+            <Button className='btn-primary' onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1}>
               -
             </Button>
-            <Button variant="info" onClick={() => updateCantidad(item.id, item.cantidad + 1)} className='me-2 mb-2'>
+            <Button className='btn-primary' onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
               +
             </Button>
-            <Button variant="danger" onClick={() => eliminarProducto(item.id)} className='me-2 mb-2'>
+            <Button variant="danger" onClick={() => eliminarProducto(item.id)}>
               Eliminar
             </Button>
           </div>
@@ -65,7 +65,7 @@ export default function Carrito({ carro, setCarro }) {
       {carro.length > 0 && (  //si el carrito tiene productos, muestra total y boton
         <>
           <h2>Total: ${total}</h2>
-          <Button onClick={confirmarCompra}>Confirmar pedido</Button>
+          <Button className='btn-primary' onClick={confirmarCompra}>Confirmar pedido</Button>
           <Modal show={mostrarModal} onHide={cerrarModal} centered>
             <Modal.Header closeButton>
               <Modal.Title>
