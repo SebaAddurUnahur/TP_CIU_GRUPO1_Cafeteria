@@ -9,7 +9,7 @@ export default function Inicio() {
     }, [])
 
   return (
-    <Container className="my-5">
+    <Container className="my-5" >
       <Row className="align-items-center">
         <Col xs={12} md={6} className="mb-4 mb-md-0">
           <img 

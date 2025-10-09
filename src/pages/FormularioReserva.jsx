@@ -45,8 +45,15 @@ function FormularioReserva() {
   };
 
   const manejarSubmit = (evento) => {
-    const fechaActual = new Date();
     evento.preventDefault(); // previene el comportamiento por defecto del form que recarga la página
+    const fecha = new Date()
+    const año = `${fecha.getFullYear()}`
+    const mes = fecha.getMonth() + 1
+    const mesNormalizado = mes<9 ? `0${mes}` : `${mes}` //Le agrega un 0 al mes en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
+    const dia = fecha.getDate()
+    const diaNormalizado = dia<9 ? `0${dia}` : `${dia}` //Le agrega un 0 al dia en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
+    const fechaActual = año + `-` + mesNormalizado + `-` + diaNormalizado //Se arma la fecha actual para que coincida con la que devuelve el input del form
+
     if (!isNaN(formulario.nombre)) { // isNaN devuelve true si no es un numero
       setError("El nombre no debe contener números.");
       setEnviado(false);
@@ -71,7 +78,9 @@ function FormularioReserva() {
       manejarMostrar();
       return;
     }
-    if (new Date(formulario.fecha) < fechaActual) {
+    if (formulario.fecha < fechaActual) {
+      //console.log(formulario.fecha)
+      //console.log(fechaActual)
       setError("La fecha no puede ser anterior a la actual.");
       setEnviado(false);
       manejarMostrar();
@@ -175,9 +184,11 @@ function FormularioReserva() {
           </Form.Group>
         </Row>
         <Button
+          variant="primary"
           type="submit"
           onClick={manejarMostrar}
           disabled={!formularioCompleto}
+          className="mb-5"
         >
           Reservar
         </Button>
@@ -211,8 +222,8 @@ function FormularioReserva() {
               </div>
             )}
           </Modal.Body>
-          <Modal.Footer>
-            <Button
+          <Modal.Footer>         
+              <Button
               variant="secondary"
               onClick={() => {
                 manejarCerrar();

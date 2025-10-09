@@ -30,7 +30,7 @@ export default function Footer({ theme }) {
   )
 
   return (
-    <footer className="bg-light text mt-5 pt-4">
+    <footer>
       <Container>
         {/* Versión escritorio */}
 

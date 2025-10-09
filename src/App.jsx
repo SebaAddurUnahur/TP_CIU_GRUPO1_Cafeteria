@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Nosotros from "./pages/Nosotros";
 import { useState, useEffect } from "react";
 import FormularioReserva from "./pages/FormularioReserva";
+import "../src/styles/estilos.css"
 
 function App() {
   const [carro, setCarro] = useState(() => {

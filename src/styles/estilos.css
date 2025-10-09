@@ -1,0 +1,77 @@
+:root {
+  /* Paleta de colores */
+  --color-fondo: #F3E0C7;
+  --color-texto: #4B2E18;
+  --color-primario: #7B4F2D;
+  --color-secundario: #6A8B59;
+  --color-claro: #FFFFFF;
+}
+
+/* Fondo general */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--color-texto);
+}
+
+.navbar a, .navbar-brand {
+  color: var(--color-fondo) !important;
+}
+
+.navbar a:hover {
+  color: var(--color-secundario) !important;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-texto);
+  border-color: var(--color-texto);
+}
+
+.btn-outline-primary {
+  color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.btn-outline-primary:hover {
+  color: var(--color-fondo);
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+
+/* Menu */
+.cartaMenu{
+  background-color: #D9B48C;
+}
+
+.btn-cafe {
+  background-color: #8D6E63;
+  color: #fff;
+  border: none;
+}
+
+.btn-cafe.active,
+.btn-cafe:active,
+.btn-cafe:focus {
+  background-color: #6D4F42;
+  color: #fff;
+}
