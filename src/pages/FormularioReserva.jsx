@@ -108,7 +108,7 @@ function FormularioReserva() {
       <Form onSubmit={manejarSubmit} className="container">
         <Row className="mb-3">
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Nombre</Form.Label>
             <Form.Control
               required
               type="text"
@@ -119,7 +119,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Apellido</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Apellido</Form.Label>
             <Form.Control
               required
               type="text"
@@ -130,7 +130,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Email</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Email</Form.Label>
             <Form.Control
               required
               type="text"
@@ -141,7 +141,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Teléfono</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Teléfono</Form.Label>
             <Form.Control
               required
               type="tel"
@@ -152,7 +152,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Fecha de reserva</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Fecha de reserva</Form.Label>
             <Form.Control
               required
               type="date"
@@ -162,7 +162,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12} md={4}>
-            <Form.Label>Hora de reserva</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Hora de reserva</Form.Label>
             <Form.Control
               required
               type="time"
@@ -172,7 +172,7 @@ function FormularioReserva() {
             />
           </Form.Group>
           <Form.Group as={Col} xs={12}>
-            <Form.Label>Mensaje o detalle que necesitemos saber (opcional)</Form.Label>
+            <Form.Label className="form-label text-dark fw-bold">Mensaje o detalle que necesitemos saber (opcional)</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
