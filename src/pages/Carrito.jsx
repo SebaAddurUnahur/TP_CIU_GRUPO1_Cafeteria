@@ -50,15 +50,15 @@ export default function Carrito({ carro, setCarro }) {
             <p>
               {item.nombre} - ${item.precio} x {item.cantidad}
             </p>
-            <button onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1}>
+            <Button variant="secondary" onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1}>
               -
-            </button>
-            <button onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
+            </Button>
+            <Button variant="info" onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
               +
-            </button>
-            <button onClick={() => eliminarProducto(item.id)}>
-              X
-            </button>
+            </Button>
+            <Button variant="danger" onClick={() => eliminarProducto(item.id)}>
+              Eliminar
+            </Button>
           </div>
         ))
       )}
