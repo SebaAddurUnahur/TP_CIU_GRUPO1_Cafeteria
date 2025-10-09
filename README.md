@@ -83,3 +83,11 @@ La cafetería **Luna & Granos Café** quiere modernizar su presencia online. Nos
 - Procurar tener instalado NodeJs y Npm (puede verificar las versiones con los siguientes comandos node -v y npm -v)
 - Abra la terminal del Ide e instale las dependencias necesarias con el comando npm install (o su abreviación npm i)
 - hecho esto luego ponga en la terminal el comando npm run dev
+
+
+# GRUPO DE DESARROLLADORES
+
+- Ignacio Colman (42.536.211)
+- Pablo Mauricio Pedros (37.750.134)
+- Franco Colombano (45.476.617)
+- Hector Sebastian Addur (33.737.722)

@@ -100,3 +100,10 @@ footer {
 .formImput{
   background-color: #D9B48C;
 }
+
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #D9B48C inset !important; 
+  -webkit-text-fill-color: #000 !important; 
+}
