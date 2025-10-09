@@ -17,7 +17,7 @@ export default function CarritoOffcanvas({ show, setShowCarrito, carro, setCarro
 
     return (
         <Offcanvas show={show} onHide={setShowCarrito} placement="end">
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header closeButton className="cartaMenu">
                 <Offcanvas.Title>Tu carrito</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className="cartaMenu">

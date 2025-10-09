@@ -51,7 +51,7 @@ function FormularioReserva() {
     const mes = fecha.getMonth() + 1
     const mesNormalizado = mes<9 ? `0${mes}` : `${mes}` //Le agrega un 0 al mes en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
     const dia = fecha.getDate()
-    const diaNormalizado = dia<9 ? `0${dia}` : `${dia}` //Le agrega un 0 al dia en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
+    const diaNormalizado = dia<=9 ? `0${dia}` : `${dia}` //Le agrega un 0 al dia en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
     const fechaActual = año + `-` + mesNormalizado + `-` + diaNormalizado //Se arma la fecha actual para que coincida con la que devuelve el input del form
 
     if (!isNaN(formulario.nombre)) { // isNaN devuelve true si no es un numero
@@ -100,7 +100,7 @@ function FormularioReserva() {
 
   return (
     <>
-      <h2 className="text-center mb-3">Hacé tu reserva</h2>
+      <h2 className="text-center mb-3 mt-3">Hacé tu reserva</h2>
       <p className="text-muted text-center">
         Completá tus datos y elegí fecha y hora. Te confirmaremos por mail 📩
       </p>
@@ -224,7 +224,6 @@ function FormularioReserva() {
           </Modal.Body>
           <Modal.Footer>         
               <Button
-              variant="secondary"
               onClick={() => {
                 manejarCerrar();
                 if (!error) { // si no hay error, activa la navegacion en el boton Ir al inicio

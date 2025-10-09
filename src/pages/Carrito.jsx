@@ -40,7 +40,7 @@ export default function Carrito({ carro, setCarro }) {
   }
 
   return (
-    <div className="container">
+    <div className="container my-3">
       <h1>Tu Carrito</h1>
       {carro.length === 0 ? (
         <p>El carrito está vacío</p>
@@ -50,13 +50,13 @@ export default function Carrito({ carro, setCarro }) {
             <p>
               {item.nombre} - ${item.precio} x {item.cantidad}
             </p>
-            <Button variant="secondary" onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1}>
+            <Button variant="secondary" onClick={() => updateCantidad(item.id, item.cantidad - 1)} disabled={item.cantidad <= 1} className='me-2 mb-2'>
               -
             </Button>
-            <Button variant="info" onClick={() => updateCantidad(item.id, item.cantidad + 1)}>
+            <Button variant="info" onClick={() => updateCantidad(item.id, item.cantidad + 1)} className='me-2 mb-2'>
               +
             </Button>
-            <Button variant="danger" onClick={() => eliminarProducto(item.id)}>
+            <Button variant="danger" onClick={() => eliminarProducto(item.id)} className='me-2 mb-2'>
               Eliminar
             </Button>
           </div>
@@ -65,7 +65,7 @@ export default function Carrito({ carro, setCarro }) {
       {carro.length > 0 && (  //si el carrito tiene productos, muestra total y boton
         <>
           <h2>Total: ${total}</h2>
-          <Button variant="success" onClick={confirmarCompra}>Confirmar pedido</Button>
+          <Button onClick={confirmarCompra}>Confirmar pedido</Button>
           <Modal show={mostrarModal} onHide={cerrarModal} centered>
             <Modal.Header closeButton>
               <Modal.Title>
@@ -76,7 +76,7 @@ export default function Carrito({ carro, setCarro }) {
               <p>Gracias por tu compra. Te contactaremos pronto para coordinar la entrega.</p>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={cerrarModal}>
+              <Button onClick={cerrarModal}>
                 Ir al inicio
               </Button>
             </Modal.Footer>

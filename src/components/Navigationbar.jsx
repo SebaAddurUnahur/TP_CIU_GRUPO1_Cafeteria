@@ -1,7 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { useState } from "react";
 
 function NavigationBar({ totalItems, setShowCarrito }) {
@@ -26,21 +24,21 @@ function NavigationBar({ totalItems, setShowCarrito }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/" onClick={() => setExpanded(false)}>
-              Inicio
+              <Button>Inicio</Button>
             </Nav.Link>
             <Nav.Link
               as={NavLink}
               to="/carta"
               onClick={() => setExpanded(false)}
             >
-              Carta
+              <Button>Carta</Button>
             </Nav.Link>
             <Nav.Link
               as={NavLink}
               to="/reserva"
               onClick={() => setExpanded(false)}
             >
-              Hacé tu reserva
+              <Button>Hacé tu reserva</Button>
             </Nav.Link>
           </Nav>
           <button

@@ -1,3 +1,15 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 :root {
   /* Paleta de colores */
   --color-fondo: #F3E0C7;
@@ -9,6 +21,9 @@
 
 /* Fondo general */
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   font-family: 'Poppins', sans-serif;
@@ -51,10 +66,16 @@ body {
 
 /* Footer */
 footer {
+  margin-top: auto;
   background-color: var(--color-texto);
   color: var(--color-fondo);
   padding: 1.5rem;
   text-align: center;
+}
+
+.bg-footer {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
 }
 
 

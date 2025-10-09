@@ -55,13 +55,13 @@ export default function Footer({ theme }) {
             <Accordion flush>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Enlaces rápidos</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Body className="bg-footer">
                   {enlacesRapidos}
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1">
                 <Accordion.Header>Contacto</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Body className="bg-footer">
                   {contacto}
                 </Accordion.Body>
               </Accordion.Item>
