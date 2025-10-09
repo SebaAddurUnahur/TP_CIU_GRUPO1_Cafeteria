@@ -6,13 +6,13 @@ export default function Footer({ theme }) {
   const enlacesRapidos = (
     <ul className="list-unstyled">
       <li>
-        <Link to="/" className="text-dark text-decoration-none">Inicio</Link>
+        <Link to="/" className="text-light text-decoration-none">Inicio</Link>
       </li>
       <li>
-        <Link to="/reserva" className="text-dark text-decoration-none">Reservas</Link>
+        <Link to="/reserva" className="text-light text-decoration-none">Reservas</Link>
       </li>
       <li>
-        <Link to="/nosotros" className="text-dark text-decoration-none">Sobre nosotros</Link>
+        <Link to="/nosotros" className="text-light text-decoration-none">Sobre nosotros</Link>
       </li>
     </ul>
   )
@@ -21,10 +21,10 @@ export default function Footer({ theme }) {
     <>
       <p className="small mb-1">📍 Calle numero, Localidad</p>
       <p className="small mb-1">
-        <a href="tel:1141423239" className="text-dark text-decoration-none">📞1141423239</a>
+        <a href="tel:1141423239" className="text-light text-decoration-none">📞1141423239</a>
       </p>
       <p className="small mb-2">
-        <a href="mailto:cafelunaygranos@gmail.com" className="text-dark text-decoration-none">✉️ cafelunaygranos@gmail.com</a>
+        <a href="mailto:cafelunaygranos@gmail.com" className="text-light text-decoration-none">✉️ cafelunaygranos@gmail.com</a>
       </p>
     </>
   )
