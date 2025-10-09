@@ -20,7 +20,7 @@ export default function CarritoOffcanvas({ show, setShowCarrito, carro, setCarro
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title>Tu carrito</Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body>
+            <Offcanvas.Body className="cartaMenu">
                 {carro.length === 0 ? (
                     <p>El carrito está vacío</p>
                 ) : (
