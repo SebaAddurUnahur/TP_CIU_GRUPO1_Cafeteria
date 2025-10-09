@@ -15,7 +15,7 @@ export default function Carta({ addToCarro, setShowCarrito }) {
       nombre: "Cappuccino",
       precio: 2800.0,
       imagen: "/cafeSinFondo.png",
-      descripcion: "Café espresso con leche espumada y un toque de canela",
+      descripcion: "Café espresso con leche espumada + toque de canela",
       categoria: "Bebida",
     },
     {
