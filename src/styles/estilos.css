@@ -90,17 +90,9 @@ footer {
   border: none;
 }
 
-.btn-cafe.active,
-.btn-cafe:active,
-.btn-cafe:focus {
-  background-color: #6D4F42;
-  color: #fff;
-}
-
 .formImput{
   background-color: #D9B48C;
 }
-
 
 input:-webkit-autofill:hover,
 input:-webkit-autofill {
