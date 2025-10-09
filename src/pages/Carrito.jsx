@@ -67,11 +67,9 @@ export default function Carrito({ carro, setCarro }) {
           <h2>Total: ${total}</h2>
           <Button className='btn-primary' onClick={confirmarCompra}>Confirmar pedido</Button>
           <Modal show={mostrarModal} onHide={cerrarModal} centered>
-            <Modal.Header closeButton>
               <Modal.Title>
                 ✅ Pedido confirmado
               </Modal.Title>
-            </Modal.Header>
             <Modal.Body>
               <p>Gracias por tu compra. Te contactaremos pronto para coordinar la entrega.</p>
             </Modal.Body>

@@ -49,7 +49,7 @@ function FormularioReserva() {
     const fecha = new Date()
     const año = `${fecha.getFullYear()}`
     const mes = fecha.getMonth() + 1
-    const mesNormalizado = mes<9 ? `0${mes}` : `${mes}` //Le agrega un 0 al mes en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
+    const mesNormalizado = mes<=9 ? `0${mes}` : `${mes}` //Le agrega un 0 al mes en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
     const dia = fecha.getDate()
     const diaNormalizado = dia<=9 ? `0${dia}` : `${dia}` //Le agrega un 0 al dia en caso de que sea mes menor a 10 -> Ej: Pasa de 9 a 09
     const fechaActual = año + `-` + mesNormalizado + `-` + diaNormalizado //Se arma la fecha actual para que coincida con la que devuelve el input del form
@@ -197,11 +197,9 @@ function FormularioReserva() {
           backdrop="static"
           keyboard={false}
         >
-          <Modal.Header closeButton>
             <Modal.Title>
               {error ? "Error al reservar" : "Reserva generada con éxito"}
             </Modal.Title>
-          </Modal.Header>
           <Modal.Body>
             {error ? (
               <p>{error}</p>
